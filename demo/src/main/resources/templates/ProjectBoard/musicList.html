@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>music 등록내역</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectBoard/css/styleList.css}">
+</head>
+<body>
+<div class="container">
+    <table class="mainZone">
+        <thead class="headZone">
+        <tr>
+            <th>번호</th>
+            <th>음악명</th>
+            <th>아티스트명</th>
+            <th>등록자ID</th>
+            <th>등록자명</th>
+            <th>등록시간</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="music : ${musicList}">
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.line_no}"></td>
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.music_nm}"></td>
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.artist_nm}"></td>
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.user_id}"></td>
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.user_nm}"></td>
+            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.reg_datetime}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="backMain" class="bottom"><a th:href="@{/}">돌아가기</a></div>
+</div>
+</body>
+</html>

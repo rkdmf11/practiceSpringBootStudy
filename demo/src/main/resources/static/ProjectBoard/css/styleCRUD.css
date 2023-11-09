@@ -1,0 +1,58 @@
+body {
+/*   padding: 0;
+  margin: 0; */
+}
+
+td {
+  padding: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+/*   border: 3px solid rgb(195, 195, 195); */
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  right: 10px;
+  text-align: right;
+}
+
+.inputDiv {
+  display: inline-block;
+  margin: 0 50px;
+}
+
+.putValue {
+  border-radius: 5px;
+  background-color: rgb(234, 234, 234);
+  width: 150px;
+  height: 20px;
+}
+
+.save {
+  width: 70px;
+  height: 30px;
+  background-color: #669966;
+  color: #FFFFFF;
+  border: 1px solid rgb(234, 234, 234);
+  margin: 20px 0;
+}
+
+button:active {
+  background-color: #99CC99;
+}

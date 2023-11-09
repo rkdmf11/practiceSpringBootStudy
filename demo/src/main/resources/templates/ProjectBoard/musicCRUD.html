@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>music 수정</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectBoard/css/styleCRUD.css}">
+</head>
+<body>
+<form action="/music/new" method="post">
+    <div class="title">노래 등록</div>
+    <div class="center">
+        <table class="center">
+            <tr class="inputDiv">
+                <td>제목</td>
+                <td><input type="text" class="putValue"></td>
+                <td>가수</td>
+                <td><input type="text" class="putValue"></td>
+            </tr>
+            <tr id="musicNm" class="inputDiv">
+                <td>등록자ID</td>
+                <td><input type="text" class="putValue"></td>
+                <td>등록자명</td>
+                <td><input type="text" class="putValue"></td>
+            </tr>
+        </table>
+        <button class="save">등록</button>
+    </div>
+</form>
+<div id="backMain" class="bottom"><a th:href="@{/}">돌아가기</a></div>
+</body>
+</html>

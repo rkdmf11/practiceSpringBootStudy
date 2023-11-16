@@ -1,5 +1,6 @@
 package com.example.demo.ProjectBoard.repository;
 
+import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
 
 import java.util.List;
@@ -13,5 +14,5 @@ public interface MusicRepository {
 
     Optional<MusicDto> findByUserId(String user_id);  // 회원 id 찾기
 
-    List<MusicDto> findAll();  // 저장된 음악 리스트 모두 반환
+    List<Music> findAll();  // 저장된 음악 리스트 모두 반환
 }

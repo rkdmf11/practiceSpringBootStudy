@@ -15,6 +15,7 @@ public class MusicDto {
     private String user_nm;
     private Date reg_datetime;
 
+    //esquest dto 로 받은 Posts 객체를 entity 화하여 저장하는 용도
     public static Music toEntity(MusicDto dto) {
         return Music.builder()
                 .line_no(dto.getLine_no())

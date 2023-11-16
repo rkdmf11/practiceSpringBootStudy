@@ -1,5 +1,6 @@
 package com.example.demo.ProjectBoard.controller;
 
+import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
 import com.example.demo.ProjectBoard.service.MusicRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class MusicRecordController {
      */
     @GetMapping(value = "/listInquiry")
     public String musicList(Model model) {
-        List<MusicDto> music = musicRecordService.findAll();
+        List<Music> music = musicRecordService.findAll();
         model.addAttribute("musicList", music);
         return "ProjectBoard/musicList";  //music/musicList
     }

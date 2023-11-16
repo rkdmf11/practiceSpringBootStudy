@@ -1,6 +1,8 @@
 package com.example.demo.ProjectBoard.service;
 
+import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
+import com.example.demo.ProjectBoard.repository.JdbcMusicRepository;
 import com.example.demo.ProjectBoard.repository.MusicRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.ui.Model;
@@ -8,13 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@Transactional
+@Transactional  // 트랜젝션을 자동으로 COMMIT 해줌
 public class MusicRecordService {
 
-    private final MusicRepository musicRepository;
+    private final JdbcMusicRepository jdbcMusicRepository;
 
-    public MusicRecordService(MusicRepository musicRepository) {
-        this.musicRepository = musicRepository;
+    public MusicRecordService(JdbcMusicRepository jdbcMusicRepository) {
+        this.jdbcMusicRepository = jdbcMusicRepository;
     }
 
     /**
@@ -22,14 +24,14 @@ public class MusicRecordService {
      */
     @PostMapping(value = "/music/new")
     public Long save(MusicDto music) {
-        musicRepository.save(music);
+        jdbcMusicRepository.save(music);
         return music.getLine_no();
     }
 
     /**
      * 전체 회원 조회
      */
-    public List<MusicDto> findAll() {
-        return musicRepository.findAll();
+    public List<Music> findAll() {
+        return jdbcMusicRepository.findAll();
     }
 }

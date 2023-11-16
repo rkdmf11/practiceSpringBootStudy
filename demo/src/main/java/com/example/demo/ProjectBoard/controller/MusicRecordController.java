@@ -2,9 +2,9 @@ package com.example.demo.ProjectBoard.controller;
 
 import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
-import com.example.demo.ProjectBoard.dto.MusicRequestDto;
 import com.example.demo.ProjectBoard.service.MusicRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +46,7 @@ public class MusicRecordController {
      */
     @GetMapping(value = "/listInquiry")
     public String musicList(Model model) {
-        List<Music> music = musicRecordService.findMusics();
+        List<Music> music = musicRecordService.findAll();
         model.addAttribute("musicList", music);
         return "ProjectBoard/musicList";  //music/musicList
     }
@@ -54,15 +54,9 @@ public class MusicRecordController {
     /**
      * 내역 저장
      */
-    @GetMapping("/music/new")
-    public String createForm() {
-        return "ProjectBoard/musicCRUD";
-    }
-
-    @PostMapping("/music/new")
-    public String create(MusicRequestDto musicRequestDto) {
-        System.out.println(musicRequestDto);
-        musicRecordService.save(musicRequestDto);
+    @PostMapping("/post")
+    public String create(MusicDto music) {
+        musicRecordService.save(music);
         return "redirect:/";
     }
 }

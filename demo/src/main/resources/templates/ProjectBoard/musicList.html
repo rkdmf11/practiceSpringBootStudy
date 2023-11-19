@@ -20,12 +20,12 @@
         </thead>
         <tbody>
         <tr th:each="music : ${musicList}">
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.line_no}"></td>
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.music_nm}"></td>
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.artist_nm}"></td>
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.user_id}"></td>
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.user_nm}"></td>
-            <td th:if="${not #string.isEmpty(musicList)}" th:text="${music.reg_datetime}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.lineNo}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.musicNm}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.artistNm}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.userId}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.userNm}"></td>
+            <td th:if="${not #strings.isEmpty(musicList)}" th:text="${music.regDatetime}"></td>
         </tr>
         </tbody>
     </table>

@@ -12,18 +12,18 @@
         <table class="center">
             <tr class="inputDiv">
                 <td>제목</td>
-                <td><input type="text" class="putValue"></td>
+                <td><input type="text" name="musicNm" class="putValue"></td>
                 <td>가수</td>
-                <td><input type="text" class="putValue"></td>
+                <td><input type="text" name="artistNm" class="putValue"></td>
             </tr>
             <tr id="musicNm" class="inputDiv">
                 <td>등록자ID</td>
-                <td><input type="text" class="putValue"></td>
+                <td><input type="text" name="userId" class="putValue"></td>
                 <td>등록자명</td>
-                <td><input type="text" class="putValue"></td>
+                <td><input type="text" name="userNm" class="putValue"></td>
             </tr>
         </table>
-        <button class="save">등록</button>
+        <button type="submit" class="save">등록</button>
     </div>
 </form>
 <div id="backMain" class="bottom"><a th:href="@{/}">돌아가기</a></div>

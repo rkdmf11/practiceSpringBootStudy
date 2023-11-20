@@ -1,5 +1,6 @@
 package com.example.demo.ProjectBoard.repository;
 
+import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
 import jakarta.persistence.EntityManager;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -52,12 +53,13 @@ public class JdbcMusicRepository implements MusicRepository {
 
     /**
      * 전체 내역 조회
+     * jpql 사용 -> Music Entity 자체를 조회
      *
      * @return
      */
     @Override
-    public List<MusicDto> findAll() {
-        return em.createQuery("select m from Music m", MusicDto.class)
+    public List<Music> findAll() {
+        return em.createQuery("select m from Music m", Music.class)
                 .getResultList();
     }
 }

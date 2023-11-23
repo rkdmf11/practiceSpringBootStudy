@@ -1,29 +1,39 @@
 package com.example.demo.ProjectBoard.dto;
 
 import com.example.demo.ProjectBoard.domain.Music;
-import lombok.Getter;
+import lombok.*;
 
 import java.sql.Date;
 
 @Getter
+@Setter
+@Data
+@NoArgsConstructor
 public class MusicDto {
 
-    private Long line_no; // 시스템에서 구분하기 위한 값
-    private String music_nm;
-    private String artist_nm;
-    private String user_id;
-    private String user_nm;
-    private Date reg_datetime;
+    private Long lineNo; // 시스템에서 구분하기 위한 값
+    private String musicNm;
+    private String artistNm;
+    private String userId;
+    private String userNm;
+    private Date regDatetime;
 
-    //esquest dto 로 받은 Posts 객체를 entity 화하여 저장하는 용도
-    public static Music toEntity(MusicDto dto) {
+    public static Music toEntity(Music dto) {
+//        return Music.builder()
+//                .line_no(line_no)
+//                .music_nm(music_nm)
+//                .artist_nm(artist_nm)
+//                .user_id(user_id)
+//                .user_nm(user_nm)
+//                .reg_datetime(reg_datetime)
+//                .build();
         return Music.builder()
-                .line_no(dto.getLine_no())
-                .music_nm(dto.getMusic_nm())
-                .artist_nm(dto.getArtist_nm())
-                .user_id(dto.getUser_id())
-                .user_nm(dto.getUser_nm())
-                .reg_datetime(dto.getReg_datetime())
+                .lineNo(dto.getLineNo())
+                .musicNm(dto.getMusicNm())
+                .artistNm(dto.getArtistNm())
+                .userId(dto.getUserId())
+                .userNm(dto.getUserNm())
+                .regDatetime(dto.getRegDatetime())
                 .build();
     }
 }

@@ -4,11 +4,13 @@ import com.example.demo.ProjectBoard.domain.Music;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 
 @Getter
 @Data
+@NoArgsConstructor
 public class MusicRequestDto {
 
     private Long lineNo; // 시스템에서 구분하기 위한 값

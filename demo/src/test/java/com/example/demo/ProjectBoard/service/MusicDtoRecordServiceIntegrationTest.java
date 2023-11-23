@@ -1,7 +1,6 @@
 package com.example.demo.ProjectBoard.service;
 
 import com.example.demo.ProjectBoard.domain.Music;
-import com.example.demo.ProjectBoard.dto.MusicDto;
 import com.example.demo.ProjectBoard.dto.MusicRequestDto;
 import com.example.demo.ProjectBoard.repository.MusicRepository;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
-public class MusicRecordServiceIntegrationTest {
+public class MusicDtoRecordServiceIntegrationTest {
 
     @Autowired
     MusicRecordService musicRecordService;

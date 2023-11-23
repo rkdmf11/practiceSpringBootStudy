@@ -1,8 +1,6 @@
 package com.example.demo.ProjectBoard.service;
 
-import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
-import com.example.demo.ProjectBoard.dto.MusicRequestDto;
 import com.example.demo.ProjectBoard.repository.MemoryMusicRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class MusicRecordServiceTest {
+public class MusicDtoRecordServiceTest {
 
     MusicRecordService musicRecordService;
     MemoryMusicRepository musicRepository;
@@ -38,15 +36,15 @@ public class MusicRecordServiceTest {
     void 저장() {
         // given(값 지정)
 //        Music music = new Music();
-//        MusicRequestDto musicDto1 = new MusicRequestDto();
-//        musicDto1.setMusic_nm("노래");
+        MusicDto musicDtoDto1 = new MusicDto();
+        musicDtoDto1.setMusicNm("노래");
 //
 //        //when(행위)
-//        Long saveId = musicRecordService.save(musicDto1);
+//        Long saveId = musicRecordService.save();
 ////        IllegalStateException e = assertThrows(IllegalStateException.class, () -> musicRecordService.save(musicDto1));
 //
 //        //then(결과)
 //        Music findMusic = musicRecordService.findOne(saveId).get();
-//        assertThat(musicDto1.getMusic_nm()).isEqualTo(findMusic.getMusic_nm());
+//        assertThat(musicDto1.getMusicNm()).isEqualTo(findMusic.getMusicNm());
     }
 }

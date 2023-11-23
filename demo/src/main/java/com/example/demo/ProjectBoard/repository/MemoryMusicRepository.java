@@ -3,7 +3,6 @@ package com.example.demo.ProjectBoard.repository;
 
 import com.example.demo.ProjectBoard.domain.Music;
 import com.example.demo.ProjectBoard.dto.MusicDto;
-import lombok.RequiredArgsConstructor;
 
 import java.util.*;
 
@@ -20,7 +19,7 @@ public class MemoryMusicRepository implements MusicRepository {
     public Music save(Music music) {
         MusicDto musicDto = new MusicDto();
         musicDto.setLineNo(++sequence);
-        store.put(music.getLineNo(), music);
+        store.put(musicDto.getLineNo(), music);
         return music;
     }
 
@@ -37,7 +36,7 @@ public class MemoryMusicRepository implements MusicRepository {
      * @return
      */
     @Override
-    public Optional<Music> findById(Long lineNo) {
+    public Optional<com.example.demo.ProjectBoard.domain.Music> findById(Long lineNo) {
         return Optional.ofNullable(store.get(lineNo));
     }
 
@@ -48,7 +47,7 @@ public class MemoryMusicRepository implements MusicRepository {
      * @return
      */
     @Override
-    public Optional<Music> findByMusicNm(String musicNm) {
+    public Optional<com.example.demo.ProjectBoard.domain.Music> findByMusicNm(String musicNm) {
         return store.values().stream()
                 .filter(musicDto -> musicDto.getMusicNm().equals(musicNm))
                 .findAny();
@@ -61,8 +60,8 @@ public class MemoryMusicRepository implements MusicRepository {
      * @return
      */
     @Override
-    public Optional<Optional<Music>> findByUserId(String userId) {
-        Optional<Music> result = store.values().stream()
+    public Optional<Optional<com.example.demo.ProjectBoard.domain.Music>> findByUserId(String userId) {
+        Optional<com.example.demo.ProjectBoard.domain.Music> result = store.values().stream()
                 .filter(musicDto -> musicDto.getUserId().equals(userId))
                 .findAny();
         return Optional.ofNullable(result);
@@ -74,7 +73,7 @@ public class MemoryMusicRepository implements MusicRepository {
      * @return
      */
     @Override
-    public List<Music> findAll() {
+    public List<com.example.demo.ProjectBoard.domain.Music> findAll() {
         return new ArrayList<>(store.values());
     }
 

@@ -1,4 +1,4 @@
-/* .gitattributes */
+# .gitattributes 설정
 
 * linguist-vendored
 *.java linguist-vendored=false

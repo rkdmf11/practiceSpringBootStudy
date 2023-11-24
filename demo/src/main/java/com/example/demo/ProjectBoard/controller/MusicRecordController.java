@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-//@RequiredArgsConstructor
 public class MusicRecordController {
 
     private final MusicRecordService musicRecordService;

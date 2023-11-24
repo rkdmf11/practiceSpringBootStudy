@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import java.sql.Date;
 
@@ -13,20 +15,7 @@ import java.sql.Date;
 @Builder
 @Entity
 @NoArgsConstructor
-// Mapping Name을 RecommandPostListMapping로 선언했으며, 해당 Query Result 들을 Matching 시켜주는 그런 역할입니다.
-//@SqlResultSetMapping(
-//        name = "MusicListMapping",
-//        classes = @ConstructorResult(
-//                targetClass = MusicListMapping.class,
-//                columns = {
-//                        @ColumnResult(name = "line_no", type = Long.class),
-//                        @ColumnResult(name = "music_nm", type = String.class),
-//                        @ColumnResult(name = "artist_nm", type = String.class),
-//                        @ColumnResult(name = "user_id", type = String.class),
-//                        @ColumnResult(name = "user_nm", type = String.class),
-//                        @ColumnResult(name = "reg_datetime", type = Date.class),
-//                })
-//)
+@DynamicInsert  //insert 시 null인 필드 제외
 @Table(name = "musiclist")
 public class Music {
 
@@ -36,7 +25,7 @@ public class Music {
      */
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "line_no")
     private Long lineNo; // 시스템에서 구분하기 위한 값
 
@@ -63,15 +52,4 @@ public class Music {
         this.userNm = userNm;
         this.regDatetime = regDatetime;
     }
-
-//    public static Music toEntity(MusicRequestDto dto) {
-//        return Music.builder()
-//                .line_no(dto.getLine_no())
-//                .music_nm(dto.getMusic_nm())
-//                .artist_nm(dto.getArtist_nm())
-//                .user_id(dto.getUser_id())
-//                .user_nm(dto.getUser_nm())
-//                .reg_datetime(dto.getReg_datetime())
-//                .build();
-//    }
 }

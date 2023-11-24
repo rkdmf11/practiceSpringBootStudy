@@ -36,9 +36,10 @@ public class MusicRecordServiceIntegrationTest {
         // given(값 지정)
         MusicRequestDto musicRequestDto1 = musicRequestDto;
         musicRequestDto1.setMusicNm("노래");
+        musicRequestDto1.setArtistNm("김가수");
 
         //when(행위)
-        Long saveId = musicRecordService.save(musicRequestDto);
+        Long saveId = musicRecordService.save(musicRequestDto1);
 //        IllegalStateException e = assertThrows(IllegalStateException.class, () -> musicRecordService.save(musicDto1));
 
         //then(결과)

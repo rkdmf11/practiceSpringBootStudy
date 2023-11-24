@@ -1,12 +1,9 @@
 package com.example.demo.ProjectBoard.service;
 
 import com.example.demo.ProjectBoard.domain.Music;
-import com.example.demo.ProjectBoard.dto.MusicDto;
 import com.example.demo.ProjectBoard.dto.MusicRequestDto;
 import com.example.demo.ProjectBoard.repository.MusicRepository;
 import jakarta.transaction.Transactional;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -19,9 +16,8 @@ public class MusicRecordService {
      */
 
     private final MusicRepository musicRepository;
-//    private final ModelMapper modelMapper;
 
-    //    @Autowired
+
     public MusicRecordService(MusicRepository musicRepository) {
         this.musicRepository = musicRepository;
     }

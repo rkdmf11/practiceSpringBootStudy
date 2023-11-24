@@ -27,16 +27,6 @@ public class MusicRequestDto {
         this.regDatetime = regDatetime;
     }
 
-    //    public static MusicRequestDto toDTO(Music musicEntity) { //Music dto
-//        return MusicRequestDto.builder()
-//                .lineNo(musicEntity.getLineNo())
-//                .musicNm(musicEntity.getMusicNm())
-//                .artistNm(musicEntity.getArtistNm())
-//                .userId(musicEntity.getUserId())
-//                .userNm(musicEntity.getUserNm())
-//                .regDatetime(musicEntity.getRegDatetime())
-//                .build();
-//    }
     public Music toEntity() { //Music music
         return Music.builder()
                 .lineNo(lineNo)

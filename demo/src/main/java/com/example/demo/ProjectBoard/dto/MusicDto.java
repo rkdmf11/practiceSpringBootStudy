@@ -1,7 +1,6 @@
 package com.example.demo.ProjectBoard.dto;
 
 import com.example.demo.ProjectBoard.domain.Music;
-import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,9 +18,6 @@ public class MusicDto {
     private String userId;
     private String userNm;
     private Date regDatetime;
-
-//    @Builder
-//    public MusicDto()
 
     public static Music toEntity(Music dto) {
 //        return Music.builder()

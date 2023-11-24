@@ -1,8 +1,8 @@
-/* .gitattributes */
+#.gitattributes 설정
 
 demo/** linguist-documentation=false
 demo/** linguist-vendored=false
-/* * linguist-vendored */
+# * linguist-vendored
 
 *.java linguist-vendored=false
 *.html linguist-vendored=false
